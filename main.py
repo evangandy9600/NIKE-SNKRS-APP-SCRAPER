@@ -11,7 +11,7 @@ shoe_num = 0
 sites = []
 sku_list = []
 master = []
-header_row = ['SKU', 'Release Date', 'Shoe Type', 'Shoe Name', 'Price', 'Image Link']
+header_row = ['SKU', 'Release Date', 'Shoe Type', 'Shoe Name', 'Price', 'Image Link', 'Image Name']
 
 snkrs = open('snkrs.csv', mode='w', newline="", encoding='utf_8')
 csvwriter = csv.writer(snkrs)
@@ -67,7 +67,7 @@ for tag in a_tags:
             im = requests.get(image_url)
             f.write(im.content)
 
-        SHOE = [sku, release, shoe_type, shoe_name, price, image_url]
+        SHOE = [sku, release, shoe_type, shoe_name, price, image_url, image_name]
         master.append(SHOE)
 
         t1 = t0-time.time()
